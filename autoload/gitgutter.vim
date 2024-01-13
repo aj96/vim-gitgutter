@@ -147,19 +147,6 @@ function! gitgutter#setup_maps()
     nmap <buffer> ]c <Plug>(GitGutterNextHunk)
   endif
 
-  if !hasmapto('<Plug>(GitGutterStageHunk)', 'v') && maparg('<Leader>hs', 'x') ==# ''
-    xmap <buffer> <Leader>hs <Plug>(GitGutterStageHunk)
-  endif
-  if !hasmapto('<Plug>(GitGutterStageHunk)', 'n') && maparg('<Leader>hs', 'n') ==# ''
-    nmap <buffer> <Leader>hs <Plug>(GitGutterStageHunk)
-  endif
-  if !hasmapto('<Plug>(GitGutterUndoHunk)') && maparg('<Leader>hu', 'n') ==# ''
-    nmap <buffer> <Leader>hu <Plug>(GitGutterUndoHunk)
-  endif
-  if !hasmapto('<Plug>(GitGutterPreviewHunk)') && maparg('<Leader>hp', 'n') ==# ''
-    nmap <buffer> <Leader>hp <Plug>(GitGutterPreviewHunk)
-  endif
-
   if !hasmapto('<Plug>(GitGutterTextObjectInnerPending)') && maparg('ic', 'o') ==# ''
     omap <buffer> ic <Plug>(GitGutterTextObjectInnerPending)
   endif
