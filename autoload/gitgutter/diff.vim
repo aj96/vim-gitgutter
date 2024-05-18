@@ -409,9 +409,11 @@ function! s:write_buffer(bufnr, file)
   " directory is deleted outside Vim but, because Vim caches the directory
   " name at startup and does not check for its existence subsequently, Vim
   " does not realise.  This causes E482 errors.
+  echom 'File path a:file: ' . a:file
   try
     call writefile(bufcontents, a:file, 'b')
   catch /E482/
+    echom 'Directory to create: ' . fnamemodify(a:file, ':h')
     call mkdir(fnamemodify(a:file, ':h'), '', '0700')
     call writefile(bufcontents, a:file, 'b')
   endtry
