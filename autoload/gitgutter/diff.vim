@@ -97,7 +97,7 @@ function! gitgutter#diff#run_diff(bufnr, from, preserve_full_diff) abort
     let buff_file .= '.'.extension
   endif
 
-  let buff_file = gitgutter#utility#shellescape(buff_file)
+  " let buff_file = gitgutter#utility#shellescape(buff_file)
 
   " Write buffer to temporary file.
   " Note: this is synchronous.
@@ -116,7 +116,7 @@ function! gitgutter#diff#run_diff(bufnr, from, preserve_full_diff) abort
       let from_file .= '.'.extension
     endif
 
-    let from_file = gitgutter#utility#shellescape(from_file)
+    " let from_file = gitgutter#utility#shellescape(from_file)
 
     " Write file from index to temporary file.
     let index_name = gitgutter#utility#get_diff_base(a:bufnr).':'.gitgutter#utility#base_path(a:bufnr)
